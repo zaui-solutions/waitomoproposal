@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaui & Discover Waitomo: Future-Forward Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- Dark Mode Variables and Base Styles --- */
+        :root {
+            --color-primary: #a78bfa; /* Violet-400 (Neon) */
+            --color-secondary: #22d3ee; /* Cyan-400 (Neon) */
+            --color-text-light: #e5e7eb; /* Gray-200 */
+            --color-text-muted: #9ca3af; /* Gray-400 */
+            --color-bg-main: #0a0e18; /* Deep Midnight Blue/Black */
+            --color-bg-card: #111827; /* Slightly lighter card background */
+            --color-bg-accent: #1f2937; /* Even lighter for input areas */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg-main);
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--color-text-light);
+        }
+        
+        /* --- Gradient Effects --- */
+        .gradient-text {
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-border-glow {
+            border: 2px solid transparent;
+            border-radius: 0.75rem; /* rounded-xl */
+            position: relative;
+            background: var(--color-bg-card);
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.1); /* Subtle cyan glow */
+        }
+
+        .gradient-border-glow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 0.75rem;
+            padding: 2px; /* controls border thickness */
+            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: 0;
+        }
+
+        .gradient-bg-hero {
+            background: linear-gradient(135deg, #0A0E18 0%, #171d31 100%);
+        }
+
+        /* --- Animation and Hover Effects --- */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 35px rgba(34, 211, 238, 0.3); /* Stronger glow on hover */
+        }
+
+        .icon-pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Delay animation for elements */
+        .fade-in-1 { animation-delay: 0.1s; }
+        .fade-in-2 { animation-delay: 0.2s; }
+        .fade-in-3 { animation-delay: 0.3s; }
+        .fade-in-4 { animation-delay: 0.4s; }
+        .fade-in-5 { animation-delay: 0.5s; }
+        .fade-in-6 { animation-delay: 0.6s; }
+        
+        /* Custom Scrollbar for Dark Theme */
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151; /* Gray-700 */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4b5563; /* Gray-600 */
+        }
+
+        /* Logo Styling */
+        .logo {
+            filter: brightness(1.2) drop-shadow(0 0 5px rgba(34, 211, 238, 0.5)); /* Subtle glow */
+        }
+        .logo-zaui {
+            height: 40px; /* Adjust as needed */
+            margin-right: 1.5rem; /* Space between logos */
+        }
+        .logo-waitomo {
+            height: 50px; /* Slightly larger for emphasis */
+            margin-left: 1.5rem; /* Space between logos */
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center">
+        
+        <!-- Hero Section: Data Display Header --><section class="w-full relative pt-20 pb-16 md:pt-32 md:pb-24 gradient-bg-hero text-white text-center border-b border-gray-800">
+            <div class="relative max-w-5xl mx-auto px-6 z-10">
+                <!-- Logos at the top of the Hero section --><div class="flex justify-center items-center mb-8 fade-in">
+                    <img src="https://support.zaui.com/hc/theming_assets/01HZPB6VCANYG7T82ABJP1FWB1" alt="Zaui Logo" class="logo logo-zaui fade-in fade-in-1">
+                    <span class="text-3xl font-light text-gray-500 fade-in fade-in-2">//</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSADSvwdYnN9nmqIWCpF6pQVSOwZ4S754r44Q&s" alt="Discover Waitomo Logo" class="logo logo-waitomo fade-in fade-in-3">
+                </div>
+
+                <p class="text-lg font-medium tracking-widest uppercase mb-4 text-cyan-400 fade-in fade-in-4">Strategic Partnership Proposal</p>
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tighter mb-4 fade-in fade-in-5">
+                    <span class="block">Building the <span class="gradient-text">Future-Forward</span></span>
+                    <span class="block">Experience Management Platform</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl font-light text-gray-400 max-w-3xl mx-auto mb-12 fade-in fade-in-6">
+                    A collaborative blueprint for Discover Waitomo to achieve 100% operational agility and scalable commercial growth.
+                </p>
+            </div>
+        </section>
+
+        <!-- Main Content Wrapper --><main class="flex-grow w-full max-w-6xl mx-auto px-6 lg:px-8 py-16">
+
+            <!-- Introduction Section (Flows from Hero) --><section class="mb-20 fade-in">
+                <div class="p-8 md:p-12 bg-gray-900 rounded-2xl shadow-2xl border border-indigo-700">
+                    <p class="text-2xl text-gray-300 leading-snug mb-6">
+                        Hi Christine, Denis, and the team. Thank you for the engaging week. This proposal is a direct response to your needs, committed to building the precise platform you need.
+                    </p>
+                    <div class="text-xl font-medium text-cyan-400 leading-relaxed border-l-4 border-cyan-400 pl-4 py-2">
+                        Goal: Summarize our understanding and formally present our collaborative path forward.
+                    </div>
+                </div>
+            </section>
+
+            <!-- What We Heard: Key Challenges - INFOGRAPHIC STYLE --><section class="mb-24">
+                <h2 class="text-4xl font-extrabold text-center mb-16 fade-in">
+                    <span class="gradient-text">System Friction:</span> Identifying Key Operational Hurdles
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Challenge Card 1 --><div class="p-8 gradient-border-glow card-hover transition-all duration-300 fade-in">
+                        <div class="text-5xl mb-4 text-red-400 icon-pulse">🚨</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-red-300">Operational Friction</h3>
+                        <p class="text-gray-400">Reliance on external "day sheets" and a clunky dashboard that lacks a fast, one-screen operational view.</p>
+                    </div>
+
+                    <!-- Challenge Card 2 --><div class="p-8 gradient-border-glow card-hover transition-all duration-300 fade-in">
+                        <div class="text-5xl mb-4 text-orange-400 icon-pulse">🏠</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-orange-300">Manual Accommodation</h3>
+                        <p class="text-gray-400">Inefficient cabin re-allocation and inter-company bookings demand extensive manual oversight.</p>
+                    </div>
+
+                    <!-- Challenge Card 3 --><div class="p-8 gradient-border-glow card-hover transition-all duration-300 fade-in">
+                        <div class="text-5xl mb-4 text-yellow-400 icon-pulse">💸</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-yellow-300">Commercial Bottleneck</h3>
+                        <p class="text-gray-400">Updating 200+ agent prices and net rates annually is a resource-intensive, error-prone manual job.</p>
+                    </div>
+
+                    <!-- Challenge Card 4 --><div class="p-8 gradient-border-glow card-hover transition-all duration-300 fade-in">
+                        <div class="text-5xl mb-4 text-indigo-400 icon-pulse">🔐</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-indigo-300">Modern Security Gaps</h3>
+                        <p class="text-gray-400">Critical need for 2FA and 3DS to mitigate fraud and configurable timeouts to avoid work disruption.</p>
+                    </div>
+
+                    <!-- Challenge Card 5 --><div class="p-8 gradient-border-glow card-hover transition-all duration-300 fade-in">
+                        <div class="text-5xl mb-4 text-purple-400 icon-pulse">🔄</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-purple-300">Fragmented Guest Journey</h3>
+                        <p class="text-gray-400">Customers cannot self-manage bookings, increasing your workload. Combo flows are unclear.</p>
+                    </div>
+
+                    <!-- Challenge Card 6 --><div class="p-8 gradient-border-glow card-hover transition-all duration-300 fade-in">
+                        <div class="text-5xl mb-4 text-cyan-400 icon-pulse">📊</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-cyan-300">Auditability & Visibility</h3>
+                        <p class="text-gray-400">Need for clearer, easily searchable history for who changed what and when for full accountability.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What Resonated: Impactful Capabilities - Clean List Style --><section class="mb-24">
+                <h2 class="text-4xl font-extrabold text-center mb-16 fade-in">
+                    <span class="gradient-text">Catalytic Solutions:</span> Immediate Value Proposition
+                </h2>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 bg-gradient-to-br from-indigo-900/50 to-gray-900/50 rounded-xl border border-indigo-700 shadow-md card-hover transition-all duration-300 fade-in">
+                        <div class="text-3xl mb-3 text-indigo-400">👤</div>
+                        <h4 class="font-bold text-indigo-300 text-lg mb-2">Self-Service Portal</h4>
+                        <p class="text-sm text-gray-400">Reduce administrative load by empowering guests to modify/cancel within rules.</p>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-indigo-900/50 to-gray-900/50 rounded-xl border border-cyan-700 shadow-md card-hover transition-all duration-300 fade-in">
+                        <div class="text-3xl mb-3 text-cyan-400">🗓️</div>
+                        <h4 class="font-bold text-cyan-300 text-lg mb-2">Visual Accommodation Manager</h4>
+                        <p class="text-sm text-gray-400">Drag-and-drop timeline view for effortless cabin allocation and real-time syncing.</p>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-indigo-900/50 to-gray-900/50 rounded-xl border border-purple-700 shadow-md card-hover transition-all duration-300 fade-in">
+                        <div class="text-3xl mb-3 text-purple-400">⚡</div>
+                        <h4 class="font-bold text-purple-300 text-lg mb-2">Dynamic Pricing Engine</h4>
+                        <p class="text-sm text-gray-400">Tools to optimize peak revenue and smooth demand across shoulder periods.</p>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-indigo-900/50 to-gray-900/50 rounded-xl border border-pink-700 shadow-md card-hover transition-all duration-300 fade-in">
+                        <div class="text-3xl mb-3 text-pink-400">➕</div>
+                        <h4 class="font-bold text-pink-300 text-lg mb-2">True Package Builder</h4>
+                        <p class="text-sm text-gray-400">Seamless multi-day/multi-experience itineraries with intelligent flow revision.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Commitment: A Collaborative Partnership - Detailed Data Blocks --><section class="mb-20">
+                <h2 class="text-4xl font-extrabold text-center mb-16 fade-in">
+                    <span class="gradient-text">The Pledge:</span> Our Collaborative Development Roadmap
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- Commitment 1 --><div class="p-6 bg-gray-900 rounded-xl shadow-xl border border-gray-800 hover:border-cyan-500/50 transition-all duration-300 fade-in">
+                        <div class="text-xl font-bold mb-2 text-cyan-400 flex items-center">
+                            <span class="mr-3 text-2xl">01</span> Co-designed Operational Dashboard
+                        </div>
+                        <p class="text-gray-400 ml-8">Collaborate with your leaders to design a timeline-based "day sheet" that replaces spreadsheets, providing a fast, one-screen view tailored to specific roles.</p>
+                    </div>
+                    <!-- Commitment 2 --><div class="p-6 bg-gray-900 rounded-xl shadow-xl border border-gray-800 hover:border-purple-500/50 transition-all duration-300 fade-in">
+                        <div class="text-xl font-bold mb-2 text-purple-400 flex items-center">
+                            <span class="mr-3 text-2xl">02</span> Advanced Group Modifications
+                        </div>
+                        <p class="text-gray-400 ml-8">Develop a fluid workflow to split, merge, or move partial/full bookings and add items like lunches, complete with a robust, auditable history log.</p>
+                    </div>
+                    <!-- Commitment 3 --><div class="p-6 bg-gray-900 rounded-xl shadow-xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300 fade-in">
+                        <div class="text-xl font-bold mb-2 text-indigo-400 flex items-center">
+                            <span class="mr-3 text-2xl">03</span> Security and Timeouts at Launch
+                        </div>
+                        <p class="text-gray-400 ml-8">Implement 2FA and 3DS within your six-month window and configure back-office screen timeout options based on your policy.</p>
+                    </div>
+                    <!-- Commitment 4 --><div class="p-6 bg-gray-900 rounded-xl shadow-xl border border-gray-800 hover:border-pink-500/50 transition-all duration-300 fade-in">
+                        <div class="text-xl font-bold mb-2 text-pink-400 flex items-center">
+                            <span class="mr-3 text-2xl">04</span> Commercial Automation Workshop
+                        </div>
+                        <p class="text-gray-400 ml-8">Map agent tiers and net-rate rules, then build a rules-based process for annual price updates, eliminating heavy manual lift.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps - Highlighting Immediate Action --><section class="mb-12 p-8 md:p-10 bg-gray-900 rounded-2xl shadow-xl border border-indigo-700/70 fade-in">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 border-b border-indigo-700 pb-3">
+                    Actionable Path: <span class="gradient-text">Immediate Next Steps</span>
+                </h2>
+                <ul class="list-none space-y-4 text-lg text-gray-300">
+                    <li class="flex items-start">
+                        <span class="mr-3 text-2xl text-cyan-400">>></span>
+                        <span>Access to a personalized, hands-on <span class="text-cyan-300">demo environment</span> for full exploration.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-2xl text-purple-400">>></span>
+                        <span>Schedule a deep dive with Ori and Corey on architecture, reliability, and the revised combo flow.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-2xl text-indigo-400">>></span>
+                        <span>Share pre-questions or preferred policies for timeouts/notifications to accelerate integration planning.</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer --><footer class="w-full text-center py-10 gradient-bg-hero text-white mt-16 border-t border-gray-800">
+            <div class="max-w-4xl mx-auto px-6">
+                <p class="text-2xl font-medium opacity-95 mb-4 fade-in">
+                    We are a Technology Partner <span class="gradient-text">Committed to Investment.</span>
+                </p>
+                <p class="text-md text-gray-400 mb-6 fade-in">
+                    Building the platform you want to live in.
+                </p>
+                <p class="text-lg font-semibold text-gray-200 fade-in">
+                    Best regards, The Zaui Team
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
